@@ -1,0 +1,30 @@
+# Node & Next.js
+node_modules/
+.next/
+out/
+build/
+.npm/
+
+# Python & FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.venv
+alembic.ini
+
+# OS & Logs
+.DS_Store
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode/
+.idea/
+.cursor/
+
+# Local databases
+*.sqlite3
+*.db
