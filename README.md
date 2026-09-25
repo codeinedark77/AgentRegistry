@@ -34,7 +34,7 @@
 
 <br/>
 
-![AgentRegistry Dashboard Preview](https://placehold.co/1200x600/030308/00f5ff?text=AgentRegistry+Command+Center&font=raleway)
+<!-- Dashboard Preview placeholder -->
 
 </div>
 

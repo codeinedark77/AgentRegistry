@@ -115,14 +115,6 @@ def check_system_ram(*args, **kwargs) -> str:
     except Exception as e:
         return json.dumps({"status": "error", "message": str(e)})
 
-def execute_system_ping(target_url: str) -> str:
-    """Executes an OS-level ping to check network latency."""
-    print(f"[TOOL EXECUTED] Pinging target network: {target_url}")
-    try:
-        result = subprocess.run(["ping", "-c", "3", target_url], capture_output=True, text=True, check=True)
-        return json.dumps({"status": "success", "ping_stats": result.stdout[-150:]}) 
-    except Exception as e:
-        return json.dumps({"status": "error", "message": f"Ping failed: {str(e)}"})
 
 def check_docker_containers(*args, **kwargs) -> str:
     """Executes 'docker ps' to verify microservice health."""
@@ -150,6 +142,5 @@ AVAILABLE_TOOLS = {
     "diagnose_crop_disease": diagnose_crop_disease,
     "analyze_satellite_imagery": analyze_satellite_imagery,
     "check_system_ram": check_system_ram,
-    "execute_system_ping": execute_system_ping,
     "check_docker_containers": check_docker_containers
 }

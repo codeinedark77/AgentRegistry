@@ -5,7 +5,10 @@ from jose import jwt
 from app.config import get_settings
 from app.schemas.token import TokenPayload
 
+import logging
+
 settings = get_settings()
+logger = logging.getLogger(__name__)
 
 # ── Password Hashing (Raw Bcrypt - No Passlib Junk) ───────────
 
@@ -21,7 +24,8 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
             plain_password.encode('utf-8'), 
             hashed_password.encode('utf-8')
         )
-    except Exception:
+    except Exception as e:
+        logger.warning(f"Password verification error: {e}")
         return False
 
 # ── JWT Logic ────────────────────────────────────────────────
